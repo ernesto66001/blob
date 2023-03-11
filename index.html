@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<script>
+    let images=['images/01.png','images/02.png','images/03.png','images/04.png','images/05.png','images/06.png','images/07.png','images/08.png','images/09.png','images/10.png','images/11.png','images/12.png','images/13.png','images/14.png','images/15.png','images/16.png']
+
+
+    document.body.onclick=function (e){
+        let x =e.pageX - e.target.offsetLeft
+        let y =e.pageY - e.target.offsetTop
+        let splash=document.createElement('span')
+        let bg=images[Math.floor(Math.random()*images.length)]
+        splash.style.left = x +'px'
+        splash.style.top = y +'px'
+
+        splash.style.backgroundImage= `url(${bg})`
+this.appendChild(splash)
+        setTimeout(()=>{
+            splash.remove()
+        },4000)
+    }
+</script>
+</body>
+</html>
